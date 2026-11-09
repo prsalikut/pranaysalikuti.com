@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pranay Salikuti</title>
+<meta name="description" content="Pranay Salikuti. IEEE-published author, top 15 at WRO India, founder of rentcompute.net.">
+<meta name="theme-color" content="#ECE9E2">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,400..700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23121211'/%3E%3Ctext x='16' y='22' font-family='Arial Black,Arial' font-weight='900' font-size='14' fill='%23ECE9E2' text-anchor='middle'%3EPS%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #ECE9E2; --paper: #F6F4EF; --ink: #121211; --mut: #6A675F; --line: rgb(18 18 17 / .14);
+  --dark: #121211; --on-dark: #EDEAE3; --mut-dark: #9A968C; --line-dark: rgb(237 234 227 / .14);
+  
+  --f: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --ease: cubic-bezier(.2, .7, .1, 1);
+  --g: clamp(1rem, 3.2vw, 2.5rem);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.55 var(--f); -webkit-font-smoothing: antialiased; overflow-x: clip; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+::selection { background: var(--ink); color: var(--bg); }
+.wrap { padding-inline: var(--g); max-width: 1600px; margin: 0 auto; }
+.lab { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.ul { text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat; transition: background-size .35s var(--ease), color .2s; padding-bottom: 1px; }
+.ul:hover { background-size: 0 1px; background-position: 100% 100%; }
+
+/* nav: blends over both light and dark sections */
+.bar { position: fixed; inset: 0 0 auto; z-index: 20; mix-blend-mode: difference; color: #fff; }
+.bar .wrap { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+.bar a { text-decoration: none; }
+.bar .mark { font-weight: 800; font-stretch: 125%; letter-spacing: -0.02em; }
+.bar nav { display: flex; gap: clamp(.9rem, 2vw, 1.75rem); font-size: .9rem; font-weight: 500; }
+.bar nav a { opacity: .85; transition: opacity .2s; }
+.bar nav a:hover { opacity: 1; }
+@media (max-width: 640px) { .bar nav a:not(.keep) { display: none; } }
+
+/* hero */
+.hero { padding-top: clamp(7rem, 14vw, 10rem); position: relative;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 64px 64px; background-position: -1px -1px; }
+.hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 0%, transparent 35%, var(--bg) 90%); pointer-events: none; }
+.hero > * { position: relative; z-index: 1; }
+.intro { display: flex; align-items: center; gap: clamp(1rem, 2.5vw, 1.75rem); }
+.name { font-weight: 800; font-stretch: 112%; font-size: clamp(2rem, 4.2vw, 3.4rem); line-height: 1; letter-spacing: -0.025em; }
+.hero-foot { padding-block: clamp(1.75rem, 4vw, 2.75rem) clamp(1.5rem, 3vw, 2.25rem); border-top: 1px solid var(--ink); margin-top: clamp(1.75rem, 4vw, 2.75rem); }
+.face { width: clamp(84px, 9vw, 120px); aspect-ratio: 1; object-fit: cover; border-radius: 50%; flex: none; }
+.stats { list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1rem; }
+.stats b { display: block; font-weight: 800; font-stretch: 125%; font-size: clamp(1.4rem, 3vw, 2.6rem); line-height: 1; letter-spacing: -0.02em; }
+.stats span { display: block; margin-top: .4rem; font-size: .85rem; color: var(--mut); line-height: 1.3; }
+@media (max-width: 700px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.25rem; } }
+
+
+
+/* internships */
+.jobs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.job { display: flex; flex-direction: column; gap: .4rem; background: var(--paper); border: 1px solid var(--ink); border-radius: 14px; padding: clamp(1.25rem, 3vw, 2.25rem); min-height: 280px; text-decoration: none; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+a.job:hover { transform: translateY(-4px); box-shadow: 6px 8px 0 var(--ink); }
+.job .lab { color: var(--mut); }
+.job h3 { font-weight: 850; font-stretch: 125%; text-transform: uppercase; font-size: clamp(2rem, 4.4vw, 3.8rem); line-height: .9; letter-spacing: -0.03em; margin-top: auto; padding-top: 2rem; }
+.job .what { font-weight: 600; font-size: clamp(1.05rem, 1.5vw, 1.25rem); margin-top: .5rem; }
+.job p { color: var(--mut); }
+.job .arrow { font-size: 1.3rem; align-self: flex-end; margin-top: -.25rem; }
+.job.dark-job { background: var(--dark); color: var(--on-dark); border-color: var(--dark); }
+.job.dark-job .lab, .job.dark-job p { color: var(--mut-dark); }
+@media (max-width: 760px) { .jobs { grid-template-columns: minmax(0, 1fr); } .job { min-height: 220px; } }
+
+/* section heads */
+.sec { padding-block: clamp(4.5rem, 10vw, 8rem); }
+.head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; border-bottom: 1px solid currentColor; padding-bottom: .9rem; margin-bottom: clamp(1.75rem, 4vw, 3rem); }
+.head h2 { font-weight: 850; font-stretch: 125%; text-transform: uppercase; font-size: clamp(2.4rem, 7.5vw, 6.5rem); line-height: .86; letter-spacing: -0.03em; }
+.head .lab { color: var(--mut); }
+
+/* reveal */
+.js [data-r] { opacity: 0; transform: translateY(28px); transition: opacity .8s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0ms); }
+.js [data-r].in { opacity: 1; transform: none; }
+
+/* highlights bento */
+.bento { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px; }
+.tile { position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; padding: clamp(1.1rem, 2.2vw, 1.75rem); display: flex; flex-direction: column; }
+.tile h3 { font-weight: 700; font-size: clamp(1.1rem, 1.6vw, 1.35rem); line-height: 1.25; letter-spacing: -0.01em; }
+.tile p { color: var(--mut); margin-top: .5rem; font-size: 1rem; }
+.tile .links { margin-top: auto; padding-top: 1.1rem; display: flex; gap: 1.25rem; font-weight: 600; font-size: .95rem; }
+.tile .lab { color: var(--mut); margin-bottom: .9rem; display: block; }
+.t-paper { grid-column: span 8; border-color: var(--ink); min-height: 360px; }
+.t-paper .lab, .t-paper p { color: var(--ink); }
+.t-paper .big { font-weight: 900; font-stretch: 125%; font-size: clamp(4rem, 11vw, 9.5rem); line-height: .8; letter-spacing: -0.04em; margin-bottom: auto; }
+.t-paper h3 { margin-top: 1.5rem; max-width: 36ch; font-size: clamp(1.15rem, 1.8vw, 1.5rem); }
+.t-book { grid-column: span 4; background: var(--dark); color: var(--on-dark); border-color: var(--dark); }
+.t-book .lab, .t-book p { color: var(--mut-dark); }
+.t-book img { width: 46%; max-width: 170px; border-radius: 4px; box-shadow: 0 18px 40px -12px rgb(0 0 0 / .7); transform: rotate(-4deg); transition: transform .5s var(--ease); margin: .25rem 0 1.5rem .5rem; }
+.t-book:hover img { transform: rotate(0) scale(1.04); }
+.t-book > div { display: flex; flex-direction: column; flex: 1; }
+.t-img { padding: 0; grid-column: span 6; min-height: 380px; color: #fff; border-color: var(--ink); }
+.t-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.t-img:hover img { transform: scale(1.05); }
+.t-img::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgb(10 10 9 / .92) 0%, rgb(10 10 9 / .4) 45%, transparent 72%); }
+.t-img .in-tile { position: relative; z-index: 2; margin-top: auto; padding: clamp(1.1rem, 2.2vw, 1.75rem); }
+.t-img p, .t-img .lab { color: rgb(255 255 255 / .8); }
+.t-vol-b img { object-position: 50% 30%; }
+.t-vol-b::before { display: none; }
+.t-img .place { display: block; font-weight: 900; font-stretch: 125%; font-size: clamp(3rem, 6vw, 5rem); line-height: .85; color: #fff; letter-spacing: -0.03em; }
+@media (max-width: 900px) {
+  .t-paper, .t-book, .t-img, .t-vol, .t-vol-b { grid-column: span 12; }
+  .t-paper { min-height: 0; }
+  .t-img { min-height: 320px; }
+  .t-book { flex-direction: row; gap: 1.25rem; align-items: flex-start; }
+  .t-book img { width: 96px; margin: 0; flex: none; }
+}
+
+
+.dark { background: var(--dark); color: var(--on-dark); }
+
+/* robotics */
+.robo-hero { position: relative; min-height: min(92svh, 860px); display: flex; align-items: flex-end; overflow: hidden; color: #fff; background: var(--dark); }
+.robo-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); }
+.robo-hero::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgb(12 12 11 / .95) 0%, rgb(12 12 11 / .45) 45%, rgb(12 12 11 / .15) 100%); }
+.robo-hero .wrap { position: relative; z-index: 2; width: 100%; padding-bottom: clamp(1.75rem, 4vw, 3rem); }
+.robo-hero .lab { color: rgb(255 255 255 / .8); }
+.top15 { font-weight: 900; font-stretch: 125%; text-transform: uppercase; font-size: clamp(4.5rem, 19vw, 18rem); line-height: .8; letter-spacing: -0.045em; margin-top: .75rem; }
+.top15 em { font-style: normal; color: transparent; -webkit-text-stroke: 2px #fff; }
+.robo-hero .sub { font-size: clamp(1.05rem, 1.8vw, 1.35rem); font-weight: 500; margin-top: 1rem; max-width: 40ch; }
+.robo-body { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: var(--g); padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 3vw, 2rem); }
+.robo-body p { font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--mut); }
+.robo-body p + p { margin-top: .9rem; }
+.robo-body p b { color: var(--ink); font-weight: 700; }
+.role { border: 1px solid var(--ink); border-radius: 14px; padding: 1.25rem 1.4rem; align-self: start; }
+.role .lab { color: var(--mut); }
+.role strong { display: block; margin-top: .5rem; font-weight: 850; font-stretch: 125%; text-transform: uppercase; font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1; letter-spacing: -0.02em; }
+.role .links { display: flex; flex-wrap: wrap; gap: .6rem 1.25rem; margin-top: 1.25rem; font-weight: 600; font-size: .95rem; }
+.seasons { display: flex; gap: .5rem; margin-top: 1.25rem; }
+.seasons span { border: 1px solid var(--ink); border-radius: 99px; padding: .2rem .75rem; font-size: .85rem; font-weight: 600; }
+.seasons span.now { background: var(--ink); color: var(--bg); }
+@media (max-width: 820px) { .robo-body { grid-template-columns: minmax(0, 1fr); } }
+.rail { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--g); padding-inline: var(--g); padding-bottom: 1rem; scrollbar-width: thin; scrollbar-color: var(--ink) transparent; }
+.rail figure { flex: 0 0 clamp(240px, 30vw, 420px); scroll-snap-align: start; }
+.rail img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 12px; }
+.rail figcaption { margin-top: .5rem; color: var(--mut); font-size: .95rem; }
+
+/* client work */
+.sites { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 2rem); }
+.site { text-decoration: none; display: block; }
+.frame { border: 1px solid var(--ink); border-radius: 12px; overflow: hidden; background: var(--paper); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
+.frame i { display: flex; gap: 6px; padding: 9px 12px; border-bottom: 1px solid var(--ink); }
+.frame i::before, .frame i::after, .frame i b { content: ""; width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--ink); }
+.frame img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+.site:hover .frame { transform: translateY(-6px) rotate(-.6deg); box-shadow: 8px 10px 0 var(--ink); }
+.site .meta { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-top: .8rem; }
+.site strong { font-weight: 700; font-size: 1.1rem; }
+.site span { color: var(--mut); font-size: .9rem; text-align: right; }
+@media (max-width: 640px) { .sites { grid-template-columns: minmax(0, 1fr); } }
+
+/* also */
+.also { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 12px; }
+.also li { border-top: 2px solid var(--ink); padding-top: 1rem; color: var(--mut); font-size: 1rem; }
+.also b { display: block; color: var(--ink); font-weight: 800; font-stretch: 112%; font-size: 1.15rem; margin-bottom: .35rem; }
+.also a { font-weight: 600; color: var(--ink); }
+@media (max-width: 900px) { .also { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.75rem; } }
+@media (max-width: 520px) { .also { grid-template-columns: minmax(0, 1fr); } }
+
+/* footer */
+footer { padding-block: clamp(4.5rem, 10vw, 8rem) 2rem; }
+footer .lab { color: var(--mut-dark); }
+.big-mail { display: block; margin-top: 1rem; text-decoration: none; font-weight: 850; font-stretch: 125%; font-size: clamp(1.5rem, 6.2vw, 6rem); line-height: .95; letter-spacing: -0.035em; overflow-wrap: anywhere; transition: opacity .3s; }
+.big-mail:hover { opacity: .65; }
+.fine { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: clamp(3rem, 7vw, 5rem); padding-top: 1.25rem; border-top: 1px solid var(--line-dark); color: var(--mut-dark); font-size: .9rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js [data-r] { opacity: 1; transform: none; transition: none; }
+  * { transition-duration: 0s !important; }
+}
+
+/* density: less scrolling */
+.hero { padding-top: clamp(5.5rem, 9vw, 7rem); }
+.hero-foot { padding-block: 1.5rem; margin-top: 1.5rem; }
+.sec { padding-block: clamp(2.5rem, 5vw, 4rem); }
+.head { margin-bottom: clamp(1.1rem, 2.5vw, 1.75rem); padding-bottom: .6rem; }
+.head h2 { font-size: clamp(1.9rem, 4.2vw, 3.6rem); }
+.job { min-height: 0; padding: clamp(1.1rem, 2.2vw, 1.6rem); }
+.job h3 { font-size: clamp(1.7rem, 3.2vw, 2.8rem); padding-top: 1.1rem; }
+.t-paper { min-height: 0; }
+.t-paper .big { font-size: clamp(3rem, 7vw, 6rem); }
+.t-paper h3 { margin-top: 1rem; }
+.t-book img { max-width: 120px; margin: 0 0 1rem .25rem; }
+.t-img { grid-column: span 3; min-height: 300px; }
+.t-img .place { font-size: clamp(2.4rem, 4vw, 3.6rem); }
+.robo-hero { min-height: min(62svh, 560px); }
+.top15 { font-size: clamp(4rem, 13vw, 12rem); }
+.robo-body { padding-block: clamp(1.75rem, 3.5vw, 2.75rem) 1.25rem; }
+.rail figure { flex-basis: clamp(200px, 22vw, 320px); }
+.rail img { aspect-ratio: 4 / 3; }
+.sites { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(.75rem, 1.5vw, 1.25rem); }
+.site .meta { flex-direction: column; gap: .15rem; margin-top: .6rem; }
+.site span { text-align: left; }
+.also { gap: 1.25rem 12px; grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.also li { font-size: .92rem; padding-top: .7rem; }
+.also b { font-size: 1.02rem; }
+footer { padding-block: clamp(2.75rem, 6vw, 4.5rem) 1.5rem; }
+.big-mail { font-size: clamp(1.4rem, 4.2vw, 3.8rem); }
+.fine { margin-top: clamp(1.75rem, 4vw, 2.75rem); }
+@media (max-width: 1100px) { .t-img { grid-column: span 6; } .sites { grid-template-columns: repeat(2, minmax(0, 1fr)); } .also { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 900px) { .t-paper, .t-book { grid-column: span 12; } }
+@media (max-width: 640px) {
+  .t-img { grid-column: span 6; min-height: 220px; }
+  .t-img .in-tile { padding: .9rem; }
+  .t-img h3 { font-size: 1rem; }
+  .t-img p { font-size: .85rem; }
+  .t-img .lab { font-size: .68rem; margin-bottom: .4rem; }
+  .sites { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .site strong { font-size: .95rem; overflow-wrap: anywhere; }
+  .site span { font-size: .8rem; }
+  .also { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rail figure { flex-basis: 62vw; }
+  .robo-hero { min-height: 420px; }
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="mark" href="#">PS</a>
+    <nav aria-label="Sections">
+      <a href="#internships">Internships</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#robotics">Robotics</a>
+      <a href="#work">Client work</a>
+      <a class="keep" href="https://github.com/prsalikut" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a class="keep" href="mailto:prsalikuti@gmail.com">Email</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="intro" data-r>
+        <img class="face" src="assets/portrait.jpg" alt="Pranay Salikuti" width="280" height="280">
+        <h1 class="name">Pranay Salikuti</h1>
+      </div>
+      <div class="hero-foot">
+        <ul class="stats">
+          <li data-r style="--d:60ms"><b>2</b><span>tech internships</span></li>
+          <li data-r style="--d:100ms"><b>IEEE</b><span>published paper</span></li>
+          <li data-r style="--d:180ms"><b>Author</b><span>book on Amazon</span></li>
+          <li data-r style="--d:260ms"><b>Top 15</b><span>WRO India 2024</span></li>
+          <li data-r style="--d:340ms"><b>3rd</b><span>Hack4Hyd, T-Hub</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="internships" class="sec" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="head" data-r><h2>Internships</h2><span class="lab">01</span></div>
+      <div class="jobs">
+        <a class="job" data-r href="https://sumpositive.com/" target="_blank" rel="noopener noreferrer">
+          <span class="lab">Internship · AI infrastructure</span>
+          <h3>SumPositive</h3>
+          <span class="what">Local, private AI infrastructure</span>
+          <p>Integrated the company with its own locally hosted AI setup.</p>
+        </a>
+        <a class="job dark-job" data-r style="--d:100ms" href="https://www.arohak.com/" target="_blank" rel="noopener noreferrer">
+          <span class="lab">Internship · June 2026</span>
+          <h3>Arohak</h3>
+          <span class="what">Swift development</span>
+          <p>On the MyDigitalSafe app.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="highlights" class="sec">
+    <div class="wrap">
+      <div class="head" data-r><h2>Highlights</h2><span class="lab">02</span></div>
+      <div class="bento">
+        <article class="tile t-paper" data-r>
+          <span class="lab">Research paper</span>
+          <span class="big">IEEE</span>
+          <h3>Forecasting Models for Long-Term Solar Energy Trends: A Weather-Driven Study in Rural India</h3>
+          <p>Hybrid ARIMA, SARIMA, Random Forest and LSTM model, 92.8% accurate. ICOSAAS 2026, with Nikunj Parikh.</p>
+          <div class="links"><a class="ul" href="https://ieeexplore.ieee.org/document/11648875" target="_blank" rel="noopener noreferrer">Paper</a><a class="ul" href="https://ieeexplore.ieee.org/xpl/conhome/11648171/proceeding" target="_blank" rel="noopener noreferrer">Proceedings</a><a class="ul" href="https://github.com/prsalikut/solar-power-forecast" target="_blank" rel="noopener noreferrer">Code</a></div>
+        </article>
+        <article class="tile t-book" data-r style="--d:100ms">
+          <img src="assets/book-cover.jpg" alt="Cover of Embracing AI" width="440" height="700" loading="lazy">
+          <div>
+            <span class="lab">Book, 2026</span>
+            <h3>Embracing AI: Staying Connected, Independent &amp; Safe</h3>
+            <p>A plain-language guide to AI for older adults.</p>
+            <div class="links"><a class="ul" href="https://www.amazon.in/dp/B0H6S6FJ6W" target="_blank" rel="noopener noreferrer">Amazon</a></div>
+          </div>
+        </article>
+        <article class="tile t-img" data-r>
+          <img src="assets/yt-ai-guide.jpg" alt="Slide from the AI workshop" width="960" height="540" loading="lazy">
+          <div class="in-tile">
+            <span class="lab">Workshop</span>
+            <h3>AI for older adults</h3>
+            <p>Using AI day to day, and spotting AI scams.</p>
+            <div class="links" style="padding-top:.8rem"><a class="ul" href="https://www.youtube.com/watch?v=VbODIzD3skc" target="_blank" rel="noopener noreferrer">Watch</a></div>
+          </div>
+        </article>
+        <article class="tile t-img" data-r style="--d:100ms">
+          <img src="assets/hack4hyd-stage.jpg" alt="Presenting at Hack4Hyd" width="1200" height="900" loading="lazy">
+          <div class="in-tile">
+            <span class="place">3rd</span>
+            <h3 style="margin-top:.6rem">Hack4Hyd</h3>
+            <p>Hackathon held at T-Hub, Hyderabad.</p>
+          </div>
+        </article>
+        <article class="tile t-img t-vol" data-r>
+          <img src="assets/volunteer-class.jpg" alt="Teaching a class at ZPHS Tellapur" width="1280" height="720" loading="lazy">
+          <div class="in-tile">
+            <span class="lab">Volunteering</span>
+            <h3>Teaching environmental sustainability</h3>
+            <p>Classes for students at rural government schools, including ZPHS Tellapur.</p>
+          </div>
+        </article>
+        <article class="tile t-img t-vol-b" data-r style="--d:100ms">
+          <img src="assets/volunteer-team.jpg" alt="The volunteer team at ZPHS Tellapur" width="1280" height="960" loading="lazy">
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="robotics">
+    <div class="robo-hero">
+      <img src="assets/wro26-robot.jpg" alt="The 2026 robot at the WRO India National Championship" width="1100" height="825" loading="lazy">
+      <div class="wrap">
+        <span class="lab">03 · Robotics · WRO India 2024, Future Engineers</span>
+        <p class="top15" data-r>Top <em>15</em></p>
+        <p class="sub" data-r style="--d:120ms">Nationally, with team DIRT-LABS.</p>
+      </div>
+    </div>
+    <div class="wrap robo-body">
+      <div data-r>
+        <p><b>A self-driving robot</b> that gets around an obstacle course and parks itself: depth-camera vision on a Raspberry Pi 5, an Arduino for control, and a 3D-printed chassis.</p>
+        <p>Made the WRO India National Championship in all three of my seasons: 2023, 2024 and 2026.</p>
+        <div class="seasons" aria-label="National Championship seasons"><span>2023</span><span>2024</span><span>2026</span></div>
+      </div>
+      <div class="role" data-r style="--d:120ms">
+        <span class="lab">My part</span>
+        <strong>CAD + algorithm development</strong>
+        <div class="links"><a class="ul" href="https://wroindia.org/season-2024/result/" target="_blank" rel="noopener noreferrer">2024 rankings</a><a class="ul" href="assets/dirt-labs-wro-2024-engineering-doc.pdf" target="_blank" rel="noopener">Engineering doc</a><a class="ul" href="https://github.com/Dhruva-Sammeta/WRO-2024" target="_blank" rel="noopener noreferrer">2024 code</a><a class="ul" href="https://github.com/prsalikut/wro-2026" target="_blank" rel="noopener noreferrer">2026 code</a></div>
+      </div>
+    </div>
+    <div class="rail" tabindex="0" aria-label="Robotics photos">
+      <figure><img src="assets/wro-robot.jpg" alt="The 2024 robot" width="1073" height="1100" loading="lazy"><figcaption>2024 robot</figcaption></figure>
+      <figure><img src="assets/wro-event.jpg" alt="WRO India 2024 competition floor" width="825" height="1100" loading="lazy"><figcaption>Nationals 2024</figcaption></figure>
+      <figure><img src="assets/wro26-nationals.jpg" alt="At the WRO India National Championship 2026" width="1045" height="1100" loading="lazy"><figcaption>Nationals 2026</figcaption></figure>
+      <figure><img src="assets/wro26-robot.jpg" alt="The 2026 robot" width="1100" height="825" loading="lazy"><figcaption>2026 robot</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="work" class="sec">
+    <div class="wrap">
+      <div class="head" data-r><h2>Client work</h2><span class="lab">04</span></div>
+      <div class="sites">
+        <a class="site" data-r href="https://ledgersglobal.com" target="_blank" rel="noopener noreferrer"><div class="frame"><i><b></b></i><img src="assets/shot-ledgersglobal.jpg" alt="" width="1100" height="688" loading="lazy"></div><div class="meta"><strong>ledgersglobal.com</strong><span>Bookkeeping firm</span></div></a>
+        <a class="site" data-r style="--d:100ms" href="https://teluguruchulu.co.in" target="_blank" rel="noopener noreferrer"><div class="frame"><i><b></b></i><img src="assets/shot-teluguruchulu.jpg" alt="" width="1100" height="688" loading="lazy"></div><div class="meta"><strong>teluguruchulu.co.in</strong><span>Homemade pickles and snacks</span></div></a>
+        <a class="site" data-r href="https://westpeakdevelopers.com" target="_blank" rel="noopener noreferrer"><div class="frame"><i><b></b></i><img src="assets/shot-westpeak.jpg" alt="" width="1100" height="688" loading="lazy"></div><div class="meta"><strong>westpeakdevelopers.com</strong><span>Real estate developer</span></div></a>
+        <a class="site" data-r style="--d:100ms" href="https://hack4hyd.in" target="_blank" rel="noopener noreferrer"><div class="frame"><i><b></b></i><img src="assets/shot-hack4hyd.jpg" alt="" width="1100" height="688" loading="lazy"></div><div class="meta"><strong>hack4hyd.in</strong><span>Hackathon</span></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="head" data-r><h2>Also</h2><span class="lab">05</span></div>
+      <ul class="also">
+        <li data-r><b>Building</b><a class="ul" href="https://rentcompute.net" target="_blank" rel="noopener noreferrer">rentcompute.net</a> (founder), <a class="ul" href="https://clipitx.ai/" target="_blank" rel="noopener noreferrer">ClipItX</a> (cofounder) and <a class="ul" href="https://extruded.in" target="_blank" rel="noopener noreferrer">extruded.in</a> (founder).</li>
+        <li data-r style="--d:80ms"><b>Bot Works</b>Cofounder and president of our school robotics club. Running <a class="ul" href="https://bot-works.tech/" target="_blank" rel="noopener noreferrer">Build24</a>, a 24-hour hardware and software hackathon.</li>
+        <li data-r style="--d:160ms"><b>UNC Charlotte</b>AI and machine learning certificate, Niner Academy.</li>
+        <li data-r style="--d:240ms"><b>Fusion 360</b>Self-taught since 14.</li>
+        <li data-r style="--d:320ms"><b>Open source</b><a class="ul" href="https://github.com/prsalikut/ClipForge" target="_blank" rel="noopener noreferrer">ClipForge</a> and <a class="ul" href="https://github.com/prsalikut/Neat" target="_blank" rel="noopener noreferrer">Neat</a>, macOS apps in Swift.</li>
+        <li data-r style="--d:400ms"><b>Since 10</b>Machine learning and PC building. First PC at 10, three more at 17.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="dark">
+  <div class="wrap">
+    <span class="lab">Want to build something together?</span>
+    <a class="big-mail" href="mailto:prsalikuti@gmail.com">prsalikuti@gmail.com</a>
+    <div class="fine"><span>Based in Hyderabad, originally from New Jersey.</span><span><a class="ul" href="https://github.com/prsalikut" target="_blank" rel="noopener noreferrer">github.com/prsalikut</a> &nbsp; <a class="ul" href="#">Back to top ↑</a></span></div>
+  </div>
+</footer>
+
+
+<script>
+(() => {
+
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('[data-r]').forEach(el => io.observe(el));
+
+  // robotics photo drifts slightly while it scrolls past
+  const rh = document.querySelector('.robo-hero'), ri = rh.querySelector('img');
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) addEventListener('scroll', () => {
+    const r = rh.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) return;
+    const p = (innerHeight - r.top) / (innerHeight + r.height);
+    ri.style.transform = `scale(1.08) translateY(${(p - .5) * -6}%)`;
+  }, { passive: true });
+
+})();
+</script>
+</body>
+</html>
