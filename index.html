@@ -41,7 +41,7 @@ a { color: inherit; }
 @media (max-width: 760px) { .links { display: none; } }
 
 /* hero */
-.hero { text-align: center; padding: clamp(64px, 12vw, 128px) 0 clamp(56px, 9vw, 96px); }
+.hero { text-align: center; padding: clamp(48px, 9vw, 96px) 0 clamp(40px, 7vw, 72px); }
 .face { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; margin: 0 auto 24px; }
 .hero h1 { font-weight: 800; font-stretch: 112%; font-size: clamp(2.4rem, 6.4vw, 4.4rem); line-height: 1.02; letter-spacing: -.03em; }
 .hero p { max-width: 34rem; margin: 18px auto 0; color: var(--mut); font-size: clamp(1.02rem, 1.6vw, 1.15rem); }
@@ -51,11 +51,14 @@ a { color: inherit; }
 .small a:hover { color: var(--ink); }
 
 /* sections */
-section.s { padding: clamp(48px, 7vw, 80px) 0; border-top: 1px solid var(--line); }
+section.s { padding: clamp(40px, 6vw, 64px) 0; border-top: 1px solid var(--line); }
 .eye { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--mut); }
+.prose { margin-top: 18px; max-width: 42rem; }
+.prose p + p { margin-top: 12px; }
+.prose b { font-weight: 650; }
 .s h2 { font-weight: 800; font-stretch: 112%; font-size: clamp(1.7rem, 3.6vw, 2.4rem); line-height: 1.1; letter-spacing: -.02em; margin-top: 8px; }
 .s .sub { color: var(--mut); margin-top: 8px; max-width: 40rem; }
-.list { display: grid; gap: 14px; margin-top: 28px; }
+.list { display: grid; gap: 14px; margin-top: 20px; }
 
 /* about */
 .about { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 32px; margin-top: 24px; }
@@ -104,7 +107,7 @@ section.s { padding: clamp(48px, 7vw, 80px) 0; border-top: 1px solid var(--line)
 }
 
 /* contact */
-.contact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 28px; }
+.contact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 20px; }
 .contact a { text-decoration: none; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; transition: border-color .2s, transform .2s; }
 .contact a:hover { border-color: var(--ink); transform: translateY(-2px); }
 .contact b { display: flex; justify-content: space-between; font-weight: 700; }
@@ -117,16 +120,16 @@ footer { padding: 28px 0 40px; color: var(--mut); font-size: .85rem; text-align:
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#"><i>PS</i>Pranay Salikuti</a>
+    <a class="brand" href="#">Pranay Salikuti</a>
     <nav class="links" aria-label="Sections">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
-      <a href="#building">Building</a>
-      <a href="#projects">Projects</a>
+      <a href="#projects">Research</a>
       <a href="#robotics">Robotics</a>
+      <a href="#building">Businesses</a>
       <a href="#community">Community</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <a class="btn" href="#contact">Get in touch</a>
   </div>
 </header>
 
@@ -134,11 +137,7 @@ footer { padding: 28px 0 40px; color: var(--mut); font-size: .85rem; text-align:
   <section class="hero wrap">
     <img class="face" src="assets/portrait.jpg" alt="Pranay Salikuti" width="280" height="280">
     <h1>Hi, I'm Pranay</h1>
-    <p>A high school student in Hyderabad who builds AI infrastructure, robots, and businesses that run on them.</p>
-    <div class="cta">
-      <a class="btn solid" href="#building">View my work</a>
-      <a class="btn" href="#contact">Get in touch</a>
-    </div>
+    <p>IB Diploma · Oakridge, Hyderabad · Class of 2027</p>
     <div class="small">
       <a href="mailto:prsalikuti@gmail.com">Email</a>
       <a href="https://github.com/prsalikut" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -146,35 +145,25 @@ footer { padding: 28px 0 40px; color: var(--mut); font-size: .85rem; text-align:
   </section>
 
   <section class="s wrap" id="about">
-    <span class="eye">About</span>
-    <h2>A bit about me</h2>
-    <div class="about">
-      <div>
-        <p>I'm an IB Diploma student at Oakridge International School in Hyderabad. Most of what I do sits where hardware, AI and business meet: I run a GPU rental marketplace, I've interned on private AI infrastructure, and I've reached the WRO India National Championship in three seasons.</p>
-        <p>I've built multiple computers and enjoy it. Renting one of them out is what led to rentcompute. Outside of that, I've published a research paper with IEEE and written a book on AI for older adults.</p>
-      </div>
-      <div class="facts"><span class="eye">Quick facts</span><dl>
-        <dt>Education</dt><dd>IB Diploma · Class of 2027</dd>
-        <dt>Focus</dt><dd>AI infrastructure, robotics, business</dd>
-        <dt>Coursework</dt><dd>UNC Charlotte AI &amp; ML certificate</dd>
-        <dt>Based in</dt><dd>Hyderabad</dd>
-      </dl></div>
+    <h2>About</h2>
+    <div class="prose">
+      <p>I published a paper with <b>IEEE</b> on forecasting solar energy, and made the <b>WRO India National Championship</b> three times, placing top 15 in 2024.</p>
+      <p>I've interned at SumPositive (AI infrastructure) and Arohak (Swift). I founded rentcompute.net, a GPU rental marketplace with 150 active hosts, and extruded.in, a 3D printing service. I also wrote a book on AI for older adults.</p>
+      <p>I've built multiple computers and enjoy it. I also have an AI and machine learning certificate from UNC Charlotte.</p>
     </div>
   </section>
 
   <section class="s wrap" id="experience">
-    <span class="eye">Experience</span>
-    <h2>Internships</h2>
-    <p class="sub">Where I've worked on real systems inside a company.</p>
+    <h2>Experience</h2>
     <div class="list">
       <article class="card">
-        <div class="top"><h3>Intern, AI infrastructure</h3></div>
+        <div class="top"><h3>Intern, AI infrastructure</h3><span class="when">May 2026</span></div>
         <span class="meta"><a class="ul" href="https://sumpositive.com/" target="_blank" rel="noopener noreferrer">SumPositive</a></span>
         <p>Set up private, self-hosted AI for the company on NVIDIA DGX Spark servers and RTX 5060 Ti GPUs.</p>
         <div class="tags"><span class="tag">Local AI</span><span class="tag">GPU servers</span><span class="tag">Infrastructure</span></div>
       </article>
       <article class="card">
-        <div class="top"><h3>Intern, Swift developer</h3><span class="when">June 2026</span></div>
+        <div class="top"><h3>Intern, Swift developer</h3><span class="when">June 2025</span></div>
         <span class="meta"><a class="ul" href="https://www.arohak.com/" target="_blank" rel="noopener noreferrer">Arohak</a></span>
         <p>Worked on the MyDigitalSafe app in Swift.</p>
         <div class="tags"><span class="tag">Swift</span><span class="tag">App development</span></div>
@@ -182,10 +171,78 @@ footer { padding: 28px 0 40px; color: var(--mut); font-size: .85rem; text-align:
     </div>
   </section>
 
+  <section class="s wrap" id="projects">
+    <h2>Research and projects</h2>
+    <div class="list">
+      <article class="card">
+        <div class="top"><h3>Forecasting Models for Long-Term Solar Energy Trends: A Weather-Driven Study in Rural India</h3><span class="when">IEEE · ICOSAAS 2026</span></div>
+        <span class="meta">Research paper, with Nikunj Parikh (OMOTEC)</span>
+        <p>Hybrid ARIMA, SARIMA, Random Forest and LSTM model forecasting solar output from weather data. <b>92.8% accurate.</b></p>
+        <div class="more"><a class="ul" href="https://ieeexplore.ieee.org/document/11648875" target="_blank" rel="noopener noreferrer">Paper</a><a class="ul" href="https://ieeexplore.ieee.org/xpl/conhome/11648171/proceeding" target="_blank" rel="noopener noreferrer">Proceedings</a><a class="ul" href="https://github.com/prsalikut/solar-power-forecast" target="_blank" rel="noopener noreferrer">Code</a></div>
+      </article>
+      <div class="pair">
+        <article class="card book">
+          <img src="assets/book-cover.jpg" alt="Cover of Embracing AI" width="440" height="700" loading="lazy">
+          <div>
+            <div class="top"><h3>Embracing AI</h3><span class="when">2026</span></div>
+            <span class="meta">Book, on Amazon</span>
+            <p>A plain-language guide to AI for older adults.</p>
+            <div class="more"><a class="ul" href="https://www.amazon.in/dp/B0H6S6FJ6W" target="_blank" rel="noopener noreferrer">Amazon ↗</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="top"><h3>Open source</h3></div>
+          <span class="meta">macOS apps in Swift</span>
+          <p>ClipForge and Neat, both public on GitHub.</p>
+          <div class="more"><a class="ul" href="https://github.com/prsalikut/ClipForge" target="_blank" rel="noopener noreferrer">ClipForge</a><a class="ul" href="https://github.com/prsalikut/Neat" target="_blank" rel="noopener noreferrer">Neat</a></div>
+        </article>
+      </div>
+      <article class="card">
+        <div class="top"><h3>Client websites</h3></div>
+        
+        <div class="sites">
+          <a class="site" href="https://ledgersglobal.com" target="_blank" rel="noopener noreferrer"><img src="assets/shot-ledgersglobal.jpg" alt="" width="1100" height="688" loading="lazy"><b>ledgersglobal.com</b><span>Bookkeeping firm</span></a>
+          <a class="site" href="https://teluguruchulu.co.in" target="_blank" rel="noopener noreferrer"><img src="assets/shot-teluguruchulu.jpg" alt="" width="1100" height="688" loading="lazy"><b>teluguruchulu.co.in</b><span>Pickles and snacks</span></a>
+          <a class="site" href="https://westpeakdevelopers.com" target="_blank" rel="noopener noreferrer"><img src="assets/shot-westpeak.jpg" alt="" width="1100" height="688" loading="lazy"><b>westpeakdevelopers.com</b><span>Real estate</span></a>
+          <a class="site" href="https://hack4hyd.in" target="_blank" rel="noopener noreferrer"><img src="assets/shot-hack4hyd.jpg" alt="" width="1100" height="688" loading="lazy"><b>hack4hyd.in</b><span>Hackathon</span></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="s wrap" id="robotics">
+    <h2>Robotics</h2>
+    <div class="list">
+      <article class="card dk">
+        <div class="top"><span class="stat">Top <em>15</em></span><span class="when">WRO India 2024</span></div>
+        <span class="meta">Nationally, with team DIRT-LABS · CAD and algorithm development</span>
+        <p>A self-driving robot that gets around an obstacle course and parks itself: depth-camera vision on a Raspberry Pi 5, an Arduino for control, and a 3D-printed chassis. <b>National Championship in 2023, 2024 and 2026.</b></p>
+        <div class="thumbs">
+          <img src="assets/wro-robot.jpg" alt="The 2024 robot" width="1073" height="1100" loading="lazy">
+          <img src="assets/wro-event.jpg" alt="WRO India 2024 competition floor" width="825" height="1100" loading="lazy">
+          <img src="assets/wro26-nationals.jpg" alt="At the WRO India National Championship 2026" width="1045" height="1100" loading="lazy">
+          <img src="assets/wro26-robot.jpg" alt="The 2026 robot" width="1100" height="825" loading="lazy">
+        </div>
+        <div class="more"><a class="ul" href="https://wroindia.org/season-2024/result/" target="_blank" rel="noopener noreferrer">2024 rankings</a><a class="ul" href="assets/dirt-labs-wro-2024-engineering-doc.pdf" target="_blank" rel="noopener">Engineering doc</a><a class="ul" href="https://github.com/Dhruva-Sammeta/WRO-2024" target="_blank" rel="noopener noreferrer">2024 code</a><a class="ul" href="https://github.com/prsalikut/wro-2026" target="_blank" rel="noopener noreferrer">2026 code</a></div>
+      </article>
+      <div class="pair">
+        <article class="card">
+          <div class="top"><h3>Bot Works</h3></div>
+          <span class="meta">Cofounder and president</span>
+          <p>School robotics club. Runs Build24, a 24-hour hackathon.</p>
+          <div class="more"><a class="ul" href="https://bot-works.tech/" target="_blank" rel="noopener noreferrer">Build24 ↗</a></div>
+        </article>
+        <article class="card">
+          <div class="top"><h3>Hack4Hyd</h3><span class="when">3rd place</span></div>
+          <span class="meta">Hackathon at T-Hub, Hyderabad</span>
+          <img class="shot" style="margin-top:10px" src="assets/hack4hyd-stage.jpg" alt="Presenting at Hack4Hyd" width="1200" height="900" loading="lazy">
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="s wrap" id="building">
-    <span class="eye">Building</span>
-    <h2>Businesses I run</h2>
-    <p class="sub">Companies I've started and still work on.</p>
+    <h2>Businesses</h2>
     <div class="list">
       <article class="card split">
         <div>
@@ -214,85 +271,9 @@ footer { padding: 28px 0 40px; color: var(--mut); font-size: .85rem; text-align:
     </div>
   </section>
 
-  <section class="s wrap" id="projects">
-    <span class="eye">Projects</span>
-    <h2>Research and things I've made</h2>
-    <p class="sub">Published work, writing and software.</p>
-    <div class="list">
-      <article class="card">
-        <div class="top"><h3>Forecasting Models for Long-Term Solar Energy Trends: A Weather-Driven Study in Rural India</h3><span class="when">IEEE · ICOSAAS 2026</span></div>
-        <span class="meta">Research paper, with Nikunj Parikh (OMOTEC)</span>
-        <p>Hybrid ARIMA, SARIMA, Random Forest and LSTM model forecasting solar output from weather data. <b>92.8% accurate.</b></p>
-        <div class="more"><a class="ul" href="https://ieeexplore.ieee.org/document/11648875" target="_blank" rel="noopener noreferrer">Paper</a><a class="ul" href="https://ieeexplore.ieee.org/xpl/conhome/11648171/proceeding" target="_blank" rel="noopener noreferrer">Proceedings</a><a class="ul" href="https://github.com/prsalikut/solar-power-forecast" target="_blank" rel="noopener noreferrer">Code</a></div>
-      </article>
-      <div class="pair">
-        <article class="card book">
-          <img src="assets/book-cover.jpg" alt="Cover of Embracing AI" width="440" height="700" loading="lazy">
-          <div>
-            <div class="top"><h3>Embracing AI</h3><span class="when">2026</span></div>
-            <span class="meta">Book, on Amazon</span>
-            <p>A plain-language guide to AI for older adults: staying connected, independent and safe.</p>
-            <div class="more"><a class="ul" href="https://www.amazon.in/dp/B0H6S6FJ6W" target="_blank" rel="noopener noreferrer">Amazon ↗</a></div>
-          </div>
-        </article>
-        <article class="card">
-          <div class="top"><h3>Open source</h3></div>
-          <span class="meta">macOS apps in Swift</span>
-          <p>ClipForge and Neat, both public on GitHub.</p>
-          <div class="more"><a class="ul" href="https://github.com/prsalikut/ClipForge" target="_blank" rel="noopener noreferrer">ClipForge</a><a class="ul" href="https://github.com/prsalikut/Neat" target="_blank" rel="noopener noreferrer">Neat</a></div>
-        </article>
-      </div>
-      <article class="card">
-        <div class="top"><h3>Client websites</h3></div>
-        <span class="meta">Built for local businesses and a hackathon</span>
-        <div class="sites">
-          <a class="site" href="https://ledgersglobal.com" target="_blank" rel="noopener noreferrer"><img src="assets/shot-ledgersglobal.jpg" alt="" width="1100" height="688" loading="lazy"><b>ledgersglobal.com</b><span>Bookkeeping firm</span></a>
-          <a class="site" href="https://teluguruchulu.co.in" target="_blank" rel="noopener noreferrer"><img src="assets/shot-teluguruchulu.jpg" alt="" width="1100" height="688" loading="lazy"><b>teluguruchulu.co.in</b><span>Pickles and snacks</span></a>
-          <a class="site" href="https://westpeakdevelopers.com" target="_blank" rel="noopener noreferrer"><img src="assets/shot-westpeak.jpg" alt="" width="1100" height="688" loading="lazy"><b>westpeakdevelopers.com</b><span>Real estate</span></a>
-          <a class="site" href="https://hack4hyd.in" target="_blank" rel="noopener noreferrer"><img src="assets/shot-hack4hyd.jpg" alt="" width="1100" height="688" loading="lazy"><b>hack4hyd.in</b><span>Hackathon</span></a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="s wrap" id="robotics">
-    <span class="eye">Robotics</span>
-    <h2>Competitions and hackathons</h2>
-    <p class="sub">WRO India, Future Engineers, plus the club and hackathon I run.</p>
-    <div class="list">
-      <article class="card dk">
-        <div class="top"><span class="stat">Top <em>15</em></span><span class="when">WRO India 2024</span></div>
-        <span class="meta">Nationally, with team DIRT-LABS · CAD and algorithm development</span>
-        <p>A self-driving robot that gets around an obstacle course and parks itself: depth-camera vision on a Raspberry Pi 5, an Arduino for control, and a 3D-printed chassis. <b>National Championship in 2023, 2024 and 2026.</b></p>
-        <div class="thumbs">
-          <img src="assets/wro-robot.jpg" alt="The 2024 robot" width="1073" height="1100" loading="lazy">
-          <img src="assets/wro-event.jpg" alt="WRO India 2024 competition floor" width="825" height="1100" loading="lazy">
-          <img src="assets/wro26-nationals.jpg" alt="At the WRO India National Championship 2026" width="1045" height="1100" loading="lazy">
-          <img src="assets/wro26-robot.jpg" alt="The 2026 robot" width="1100" height="825" loading="lazy">
-        </div>
-        <div class="more"><a class="ul" href="https://wroindia.org/season-2024/result/" target="_blank" rel="noopener noreferrer">2024 rankings</a><a class="ul" href="assets/dirt-labs-wro-2024-engineering-doc.pdf" target="_blank" rel="noopener">Engineering doc</a><a class="ul" href="https://github.com/Dhruva-Sammeta/WRO-2024" target="_blank" rel="noopener noreferrer">2024 code</a><a class="ul" href="https://github.com/prsalikut/wro-2026" target="_blank" rel="noopener noreferrer">2026 code</a></div>
-      </article>
-      <div class="pair">
-        <article class="card">
-          <div class="top"><h3>Bot Works</h3></div>
-          <span class="meta">Cofounder and president</span>
-          <p>Our school robotics club. We run Build24, a 24-hour hardware and software hackathon.</p>
-          <div class="more"><a class="ul" href="https://bot-works.tech/" target="_blank" rel="noopener noreferrer">Build24 ↗</a></div>
-        </article>
-        <article class="card">
-          <div class="top"><h3>Hack4Hyd</h3><span class="when">3rd place</span></div>
-          <span class="meta">Hackathon at T-Hub, Hyderabad</span>
-          <img class="shot" style="margin-top:10px" src="assets/hack4hyd-stage.jpg" alt="Presenting at Hack4Hyd" width="1200" height="900" loading="lazy">
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="s wrap" id="community">
-    <span class="eye">Community</span>
-    <h2>Giving back</h2>
-    <p class="sub">Teaching people about technology and the world around them.</p>
-    <div class="pair" style="margin-top:28px">
+    <h2>Community</h2>
+    <div class="pair" style="margin-top:20px">
       <article class="card">
         <img class="shot" src="assets/yt-ai-guide.jpg" alt="Slide from the AI workshop" width="960" height="540" loading="lazy">
         <div class="top" style="margin-top:10px"><h3>AI workshop for older adults</h3></div>
@@ -308,9 +289,7 @@ footer { padding: 28px 0 40px; color: var(--mut); font-size: .85rem; text-align:
   </section>
 
   <section class="s wrap" id="contact">
-    <span class="eye">Contact</span>
-    <h2>Let's get in touch</h2>
-    <p class="sub">Happy to talk about AI infrastructure, robotics or building something together.</p>
+    <h2>Contact</h2>
     <div class="contact">
       <a href="mailto:prsalikuti@gmail.com"><b>Email <span aria-hidden="true">→</span></b><span>prsalikuti@gmail.com</span></a>
       <a href="https://github.com/prsalikut" target="_blank" rel="noopener noreferrer"><b>GitHub <span aria-hidden="true">→</span></b><span>github.com/prsalikut</span></a>
