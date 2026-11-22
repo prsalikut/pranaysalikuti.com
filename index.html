@@ -6,6 +6,7 @@
 <title>Pranay Salikuti</title>
 <meta name="description" content="Pranay Salikuti. Founder of rentcompute.net and extruded.in, IEEE-published, top 15 at WRO India.">
 <meta name="theme-color" content="#ECE9E2">
+<script>try{var z=Intl.DateTimeFormat().resolvedOptions().timeZone;if((z==="Asia/Kolkata"||z==="Asia/Calcutta")&&!/[?&]all\b/.test(location.search))document.documentElement.className+=" ist";}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
@@ -97,6 +98,8 @@ section.s { padding: clamp(40px, 6vw, 64px) 0; border-top: 1px solid var(--line)
 .site b { display: block; margin-top: 6px; font-weight: 650; overflow-wrap: anywhere; line-height: 1.25; }
 .site span { color: var(--mut); }
 .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.ist .stealth { display: none; }
+.ist .pair:has(.stealth) { grid-template-columns: minmax(0, 1fr); }
 .book { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 18px; align-items: start; }
 .book img { border-radius: 4px; box-shadow: 0 10px 22px -10px rgb(0 0 0 / .5); }
 @media (max-width: 700px) {
@@ -272,7 +275,7 @@ footer { padding: 28px 0 40px; color: var(--mut); font-size: .85rem; text-align:
           <p>3D printing service in Hyderabad: design, production, client orders and corporate gifting. Designed in Fusion 360, which I've taught myself since 14.</p>
           <div class="tags"><span class="tag">3D printing</span><span class="tag">CAD</span></div>
         </article>
-        <article class="card">
+        <article class="card stealth" data-nosnippet>
           <div class="top"><h3>ClipItX</h3></div>
           <span class="meta">Cofounder</span>
           <p>AI media startup that turns long videos into captioned, vertical short clips. Its <b>ClipItX Studio</b> generates images, video, multi-shot short films, product shots and voiceovers from a prompt. I set up the GPU infrastructure it runs on.</p>
